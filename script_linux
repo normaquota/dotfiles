@@ -1,0 +1,18 @@
+#!/bin/sh
+DOT_DIR=$HOME/dotfiles
+
+# vim
+ln -fs $DOT_DIR/.vimrc $HOME/.vimrc
+echo "ln -fs $DOT_DIR/.vimrc $HOME/.vimrc"
+
+# zsh
+ln -fs $DOT_DIR/.zshrc $HOME/.zshrc
+echo "ln -fs $DOT_DIR/.zshrc $HOME/.zshrc"
+
+# bash
+ln -fs $DOT_DIR/.bash_profile $HOME/.bash_profile
+echo "ln -fs $DOT_DIR/.bash_profile $HOME/.bash_profile"
+
+# tmux
+ln -fs $DOT_DIR/.tmux.conf $HOME/.tmux.conf
+echo "ln -fs $DOT_DIR/.tmux.conf $HOME/.tmux.conf"

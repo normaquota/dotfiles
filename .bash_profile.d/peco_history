@@ -1,0 +1,13 @@
+#pecoの設定
+export HISTCONTROL="ignoredups"
+peco-history() {
+    local tac="tail -r"
+    if [ -n "`which tac 2> /dev/null`" ]; then
+        tac="tac"
+    fi
+    local CMD=$(HISTTIMEFORMAT= history | ${tac} | sed -e 's/^\s*[0-9]* \+\s\+//' |peco --query "$READLINE_LINE")
+
+    READLINE_LINE="$CMD"
+    READLINE_POINT=${#CMD}
+}
+bind -x '"\C-r":peco-history'
